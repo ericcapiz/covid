@@ -33,3 +33,10 @@ body{
     flex-direction: column;
   }
 }
+
+@media (max-width: 540px){
+  .app__stats{
+    display: flex;
+    flex-direction: column;
+  }
+}
