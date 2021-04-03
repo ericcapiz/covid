@@ -55,5 +55,24 @@ body{
   .app__stats{
     display: flex;
     flex-direction: column;
+    
+  }
+}
+
+@media (max-width: 540px){
+.app__header > h1{
+  font-size: 1.8rem;
+}
+}
+
+@media (max-width: 540px){
+  .app__header{
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 990px){
+  .app__right{
+    margin: 20px 0;
   }
 }
