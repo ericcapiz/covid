@@ -83,7 +83,7 @@ const LineGraph = ({casesType='cases'}) => {
         return chartData;
     }
     return (
-        <div classname="graph">
+        <div className="graph">
         {data?.length > 0 && (
           <Line
             data={{

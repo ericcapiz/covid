@@ -7,7 +7,7 @@ const Infobox = ({title, cases, active, isGreen, isOrange, total, isRed, ...prop
         <Card onClick={props.onClick} className="infoBox">
             <CardContent className="cardCont">
                 <Typography className="infoBox__title" >{title}</Typography>
-                <h2 className={`infoBox__cases ${active && "infoBox__cases--selected"} ${isRed && "infoBox__cases--red" || isGreen && "infoBox__cases--green" || isOrange && "infoBox__cases--orange"} `}>{cases}</h2>
+                <h2 className={`infoBox__cases ${active && "infoBox__cases--selected"} ${isRed && "infoBox__cases--red"} ${isGreen && "infoBox__cases--green"} ${isOrange && "infoBox__cases--orange"} `}>{cases}</h2>
                 <Typography className={`infoBox__total`} >Total: {total}</Typography>
             </CardContent>
         </Card>
