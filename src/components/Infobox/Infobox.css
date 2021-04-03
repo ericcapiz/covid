@@ -1,18 +1,19 @@
- .cardCont{
-     width: 100%;
-    background-color: rgb(32, 45, 112);
-    color: #fff;
-    text-align: center;
-    cursor: pointer;
-    
-  }
+ 
   .infoBox{
     width: 100%;
+    margin: 0 10px;
   }
   .infoBox:hover{
-    
     transform: scale(1.2,1.2);
     transition: all .9s ease-in;
+}
+.cardCont{
+  width: 100%;
+ background-color: rgb(32, 45, 112);
+ color: #fff;
+ text-align: center;
+ cursor: pointer;
+ 
 }
 .infoBox__cases{
     padding: 5px 0;
