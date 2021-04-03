@@ -3,14 +3,18 @@ import { FormControl, MenuItem, Select, Card, CardContent } from '@material-ui/c
 import Infobox from './components/Infobox/Infobox';
 import Map from './components/Map/Map';
 import Table from './components/Table/Table';
+import LineGraph from './components/LineGraph/LineGraph';
 import {sortData} from './util';
 import './App.css';
+import "leaflet/dist/leaflet.css";
 
 function App() {
   const [countries, setCountries] = useState([]);
   const [country, setCountry] = useState('worldwide');
   const [countryInfo, setCountryInfo] = useState({});
   const [tableData, setTableData] = useState([]);
+  const [mapCenter, setMapCenter] = useState({lat: 34.80746, lng: -40.4796});
+  const [mapZoom, setMapZoom] = useState(3);
 
   useEffect(() => {
     fetch('https://disease.sh/v3/covid-19/all')
@@ -77,17 +81,18 @@ function App() {
         </FormControl>
       </div>
       <div className="app__stats">
-        <Infobox title="New Cases:" cases={countryInfo.todayCases} total={countryInfo.cases} />
-        <Infobox title="Recent Recoveries:"cases={countryInfo.todayRecovered} total={countryInfo.recovered} />
-        <Infobox title="New Deaths:" cases={countryInfo.todayDeaths} total={countryInfo.deaths} />
+        <Infobox className="app__card" title="New Cases:" cases={countryInfo.todayCases} total={countryInfo.cases} />
+        <Infobox className="app__card" title="Recent Recoveries:"cases={countryInfo.todayRecovered} total={countryInfo.recovered} />
+        <Infobox className="app__card" title="New Deaths:" cases={countryInfo.todayDeaths} total={countryInfo.deaths} />
       </div>
-      <Map />
+      <Map center={mapCenter} zoom={mapZoom} />
       </div>
       <Card className="app__right">
         <CardContent>
-          <h3>Live Cases by Country:</h3>
+          <h3 >Live Cases by Country:</h3>
           <Table countries={tableData} />
           <h3>Worldwide New Cases:</h3>
+          <LineGraph />
         </CardContent>
       </Card>
     </div>

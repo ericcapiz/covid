@@ -1,11 +1,13 @@
-.infoBox{
-    -webkit-box-shadow: 5px 5px 8px 2px rgba(0,0,0,0.41); 
-    box-shadow: 5px 5px 8px 2px rgba(0,0,0,0.52);
+ .cardCont{
+     width: 100%;
+    background-color: rgb(32, 45, 112);
+    color: #fff;
+    text-align: center;
 }
-
 .infoBox__cases{
     padding: 5px 0;
 }
+
 
 @media (max-width: 540px){
     .infoBox{
